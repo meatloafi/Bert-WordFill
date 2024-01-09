@@ -1,0 +1,17 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BERT Word Prediction</title>
+</head>
+<body>
+    <h1>BERT Word Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="text">Enter text with [MASK]:</label>
+        <input type="text" id="text" name="text" required>
+        <button type="submit">Predict</button>
+    </form>
+</body>
+</html>

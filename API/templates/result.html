@@ -1,0 +1,23 @@
+<!-- templates/result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+</head>
+<body>
+    <h1>Prediction Result</h1>
+    <p>Original Text: {{ response['original_text'] }}</p>
+    <p>Predicted Label: {{ response['predicted_word'] }}</p>
+    <h2>Top 5 Predictions:</h2>
+    <ul>
+        {% for prediction in response['top_predictions'] %}
+            <li>{{ prediction }}</li>
+        {% endfor %}
+    </ul>
+    <a href="/">Go back</a>
+</body>
+</html>
+
+

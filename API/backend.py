@@ -3,9 +3,8 @@ from transformers import BertTokenizer, BertForMaskedLM
 import torch
 from torch.nn.functional import softmax
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='')
 
-# Load pre-trained BERT tokenizer and model
 tokenizer = BertTokenizer.from_pretrained('bert-large-uncased')
 model = BertForMaskedLM.from_pretrained('bert-large-uncased')
 model.eval()
@@ -28,7 +27,6 @@ def predict():
 
         try:
             masked_index = tokenized_text.index('[MASK]')
-            # Print the index of the masked token
             print("Index of [MASK]:", masked_index)
         except ValueError:
             # If [MASK] is not found in the tokenized text, return an error message
